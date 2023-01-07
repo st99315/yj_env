@@ -1,23 +1,30 @@
 #!/bin/bash
 
-BASEDIR=$(dirname "$0")
-ABSDIR=$(realpath "${BASEDIR}")
-DIR="${BASEDIR}/plugins/tpm"
+abs_dir=$(realpath $(dirname "$0"))
+clone_dir="${abs_dir}/plugins/tpm"
+sudo_passwd="$1"
+
+source ${abs_dir}/../utils.sh
 
 # link .conf to home
 rm -f ~/.tmux
-ln -sf ${ABSDIR} ~/.tmux
-ln -sf ${ABSDIR}/.tmux.conf ~/.tmux.conf
+ln -sf ${abs_dir} ~/.tmux
+ln -sf ${abs_dir}/.tmux.conf ~/.tmux.conf
 
 # install plugin manager
-git clone --depth 1 https://github.com/tmux-plugins/tpm ${DIR}
+if [ ! -d "${clone_dir}" ]; then
+    git clone --depth 1 https://github.com/tmux-plugins/tpm ${clone_dir}
+fi
+
+${clone_dir}/bin/clean_plugins
+${clone_dir}/bin/install_plugins
+${clone_dir}/bin/update_plugins all
 
 # for tmux-yank
-sudo apt update
-sudo apt install -y xsel
+install_apt_pakage ${sudo_passwd} xsel
 
 echo ""
-echo "======================================================="
-echo " Please install plugins by tpm with <prefix>+I in tmux "
-echo "======================================================="
+echo "=================="
+echo " tmux setup done! "
+echo "=================="
 echo ""
