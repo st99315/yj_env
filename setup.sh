@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 root_dir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 

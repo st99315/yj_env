@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 utils_dir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 

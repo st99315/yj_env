@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ANSI codes [1]
 ANSI_RESET="\033[0m"

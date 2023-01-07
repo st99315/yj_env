@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 abs_dir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 clone_dir="${abs_dir}/nord-gnome-terminal"
