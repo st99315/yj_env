@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# base_dir=$(dirname "$0")
 abs_dir=$(realpath $(dirname "$0"))
+
+# import get_password function
 source ${abs_dir}/utils.sh
 
 msg="Please provide sudo password"

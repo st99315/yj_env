@@ -4,6 +4,7 @@ abs_dir=$(realpath $(dirname "$0"))
 clone_dir="${abs_dir}/plugins/tpm"
 sudo_passwd="$1"
 
+# import install_apt_package function
 source ${abs_dir}/../utils.sh
 
 # link .conf to home
@@ -16,12 +17,13 @@ if [ ! -d "${clone_dir}" ]; then
     git clone --depth 1 https://github.com/tmux-plugins/tpm ${clone_dir}
 fi
 
+# update plugins
 ${clone_dir}/bin/clean_plugins
 ${clone_dir}/bin/install_plugins
 ${clone_dir}/bin/update_plugins all
 
 # for tmux-yank
-install_apt_pakage ${sudo_passwd} xsel
+install_apt_package ${sudo_passwd} xsel
 
 echo ""
 echo "=================="

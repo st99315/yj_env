@@ -12,7 +12,7 @@ function get_password() {
     echo "${passwd}"
 }
 
-function install_apt_pakage() {
+function install_apt_package() {
     local sudo_passwd="$1"
     local pkg_name="$2"
 
