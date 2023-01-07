@@ -15,6 +15,9 @@ ${root_dir}/terminal/setup.sh ${sudo_passwd}
 # # setup tmux
 ${root_dir}/.tmux/setup.sh ${sudo_passwd}
 
+# # setup funny utils
+${root_dir}/funny/setup.sh ${sudo_passwd}
+
 echo ""
 echo "=================="
 echo " All setups done! "

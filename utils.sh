@@ -71,6 +71,15 @@ function install_font() {
     fi
 }
 
+function append_string() {
+    local file="$1"
+    local text="$2"
+
+    if [[ ! $(cat ${file} | grep "${text}") ]]; then
+        echo "${text}" > /dev/tty >> "${file}"
+    fi
+}
+
 function echo_ansi() {
     local msg="$1"
     local style_code="$2"
