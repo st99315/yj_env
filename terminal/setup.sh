@@ -1,16 +1,18 @@
 #!/bin/bash
 
-abs_dir=$(realpath $(dirname "$0"))
+abs_dir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 clone_dir="${abs_dir}/nord-gnome-terminal"
+sudo_passwd="$1"
 
-if [ ! -d "${clone_dir}" ]; then
-    git clone https://github.com/arcticicestudio/nord-gnome-terminal.git ${clone_dir}
-fi
+# import git_clone and echo_ansi
+source ${abs_dir}/../utils.sh
 
+# install nord theme
+git_clone "https://github.com/arcticicestudio/nord-gnome-terminal.git" ${clone_dir}
 ${clone_dir}/src/nord.sh
 
 echo ""
-echo -e "\033[1m>>> Please change the theme to Nord manually\033[0m"
+echo_ansi ">>> Please change the theme to Nord manually" "${ANSI_BOLD}${ANSI_SLOW_BLINK}${ANSI_FG_YELLOW}"
 echo ""
 echo "========================"
 echo " Nord theme setup done! "

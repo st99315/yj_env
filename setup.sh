@@ -1,18 +1,19 @@
 #!/bin/bash
 
-abs_dir=$(realpath $(dirname "$0"))
+root_dir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
-# import get_password function
-source ${abs_dir}/utils.sh
+# import get_password and ansi
+source ${root_dir}/utils.sh
 
-msg="Please provide sudo password"
-sudo_passwd=$(get_password "${msg}")
+echo_ansi "Please provide sudo password" "${ANSI_BOLD}${ANSI_FG_CYAN}"
+sudo_passwd=$(get_password)
+echo ""
 
 # set nord-theme to gnome-terminal
-${abs_dir}/terminal/setup.sh
+${root_dir}/terminal/setup.sh ${sudo_passwd}
 
 # # setup tmux
-${abs_dir}/.tmux/setup.sh ${sudo_passwd}
+${root_dir}/.tmux/setup.sh ${sudo_passwd}
 
 echo ""
 echo "=================="
