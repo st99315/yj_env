@@ -10,8 +10,9 @@ fi
 ${clone_dir}/src/nord.sh
 
 echo ""
-echo "=========================================="
-echo " Nord theme of gnome-terminal setup done! "
-echo " Please change the theme to Nord manually "
-echo "=========================================="
+echo -e "\033[1m>>> Please change the theme to Nord manually\033[0m"
+echo ""
+echo "========================"
+echo " Nord theme setup done! "
+echo "========================"
 echo ""
