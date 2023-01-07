@@ -47,6 +47,30 @@ function install_apt_package() {
     fi
 }
 
+function install_font() {
+    local font_path="$HOME/.local/share/fonts"
+    local font_zip_url="$1"
+    local name_prefix="$2"
+    local zip_file=$(echo "${font_zip_url}" | sed "s#.*/##")
+
+    mkdir -p "${font_path}"
+    if [[ ! $(find "${font_path}" -name "${name_prefix}*") ]]; then
+        install_apt_package wget ${sudo_passwd}
+        install_apt_package unzip ${sudo_passwd}
+        install_apt_package fontconfig ${sudo_passwd}
+
+        echo_ansi "Installing ${zip_file}" "${ANSI_BOLD}${ANSI_SLOW_BLINK}"
+        echo "" > /dev/tty
+
+        wget "${font_zip_url}"
+        unzip -q -o "${zip_file}" -d "${font_path}"
+        rm "${zip_file}"
+        rm "${font_path}/"*Windows* "${font_path}/"LICENSE* "${font_path}/"*.md
+        fc-cache -fv
+        echo "" > /dev/tty
+    fi
+}
+
 function echo_ansi() {
     local msg="$1"
     local style_code="$2"

@@ -11,8 +11,12 @@ source ${abs_dir}/../utils.sh
 git_clone "https://github.com/arcticicestudio/nord-gnome-terminal.git" ${clone_dir}
 ${clone_dir}/src/nord.sh
 
+# install fonts
+install_font "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip" "Fira Code"
+install_font "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraMono.zip" "Fura Mono"
+
 echo ""
-echo_ansi ">>> Please change the theme to Nord manually" "${ANSI_BOLD}${ANSI_SLOW_BLINK}${ANSI_FG_YELLOW}"
+echo_ansi ">>> Please change Theme and Font to Nord manually" "${ANSI_BOLD}${ANSI_SLOW_BLINK}${ANSI_FG_YELLOW}"
 echo ""
 echo "========================"
 echo " Nord theme setup done! "
