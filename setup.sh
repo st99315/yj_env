@@ -8,5 +8,3 @@ ${BASEDIR}/terminal/setup.sh
 
 # # setup tmux
 ${BASEDIR}/.tmux/setup.sh
-
-echo "Please install pulgins by tpm with <prefix>+I in tmux"

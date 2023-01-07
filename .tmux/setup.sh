@@ -15,3 +15,9 @@ git clone --depth 1 https://github.com/tmux-plugins/tpm ${DIR}
 # for tmux-yank
 sudo apt update
 sudo apt install -y xsel
+
+echo ""
+echo "======================================================="
+echo " Please install pulgins by tpm with <prefix>+I in tmux "
+echo "======================================================="
+echo ""
