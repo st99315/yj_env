@@ -18,6 +18,6 @@ sudo apt install -y xsel
 
 echo ""
 echo "======================================================="
-echo " Please install pulgins by tpm with <prefix>+I in tmux "
+echo " Please install plugins by tpm with <prefix>+I in tmux "
 echo "======================================================="
 echo ""
