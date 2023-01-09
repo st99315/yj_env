@@ -12,10 +12,13 @@ echo ""
 # set nord-theme to gnome-terminal
 ${root_dir}/terminal/setup.sh ${sudo_passwd}
 
-# # setup tmux
+# setup tmux
 ${root_dir}/.tmux/setup.sh ${sudo_passwd}
 
-# # setup funny utils
+# setup neovim
+${root_dir}/nvim/setup.sh ${sudo_passwd}
+
+# setup funny utils
 ${root_dir}/funny/setup.sh ${sudo_passwd}
 
 echo ""

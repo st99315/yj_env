@@ -15,6 +15,11 @@ function get_password() {
     echo "${passwd}"
 }
 
+function get_filename() {
+    local url="$1"
+    echo $(echo "${url}" | sed "s#.*/##")
+}
+
 function git_clone() {
     local repo_url="$1"
     local clone_dir="$2"
@@ -47,11 +52,37 @@ function install_apt_package() {
     fi
 }
 
+function install_deb_package() {
+    local deb_url="$1"
+    local pkg_name="$2"
+    local sudo_passwd="$3"
+
+    if [ ! "${sudo_passwd}" ]; then
+        echo "Please provide sudo password to install ${pkg_name}" > /dev/tty
+        sudo_passwd=$(get_password)
+    fi
+
+    # checking package is installed by apt-cache
+    if [ "$(apt-cache policy ${pkg_name} | grep Installed | grep none)" ]; then
+        echo_ansi "Installing ${pkg_name}" "${ANSI_BOLD}${ANSI_SLOW_BLINK}"
+        echo "" > /dev/tty
+
+        local deb_name="$(get_filename ${deb_url})"
+        local tmp_dir="/tmp"
+        local file_path="${tmp_dir}/${deb_name}"
+        wget "${deb_url}" -P ${tmp_dir}
+        echo ${sudo_passwd} | sudo -S apt -o Dpkg::Options::="--force-overwrite" install -y ${file_path}
+
+        rm ${file_path}
+        echo "" > /dev/tty
+    fi
+}
+
 function install_font() {
     local font_path="$HOME/.local/share/fonts"
     local font_zip_url="$1"
     local name_prefix="$2"
-    local zip_file=$(echo "${font_zip_url}" | sed "s#.*/##")
+    local zip_file=$(get_filename ${font_zip_url})
 
     mkdir -p "${font_path}"
     if [[ ! $(find "${font_path}" -name "${name_prefix}*") ]]; then
