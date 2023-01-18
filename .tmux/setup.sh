@@ -24,6 +24,9 @@ echo ""
 # for tmux-yank
 install_apt_package xsel ${sudo_passwd}
 
+# for tmux-open
+install_apt_package xdg-open ${sudo_passwd}
+
 echo ""
 echo "=================="
 echo " tmux setup done! "
