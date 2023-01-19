@@ -6,7 +6,7 @@ import sys
 
 input_url = sys.argv[1]
 input_url = input_url.split('.git')[0]
-prefix = "~/.local/share/ulauncher/extensions/com.github."
+prefix = "extensions/com.github."
 repo_name = input_url.split("git@github.com:")[-1]
 output = os.path.expanduser(prefix + ".".join(repo_name.split("/")[-2:]))
 print(output)

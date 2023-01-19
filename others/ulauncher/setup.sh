@@ -10,7 +10,8 @@ install_apt_package ulauncher ${sudo_passwd} "ppa:agornostal/ulauncher"
 
 function install_plugin() {
     local reppo_url="$1"
-    git_clone ${reppo_url} $(${abs_dir}/parser ${reppo_url})
+    parsed_path=$(${abs_dir}/parser ${reppo_url}
+    git_clone ${reppo_url} ${abs_dir}/${parsed_path})
 }
 
 install_plugin "https://github.com/fernaper/ulauncher-vscode.git"
@@ -26,7 +27,10 @@ install_plugin "https://github.com/beajeanm/ulauncher-windows-switcher.git"
 
 # link to home
 rm -rf ~/.config/ulauncher
+rm -rf ~/.local/share/ulauncher/extensions
+
 ln -sf ${abs_dir}/config ~/.config/ulauncher
+ln -sf ${abs_dir}/extensions ~/.local/share/ulauncher/extensions
 
 echo ""
 echo "======================="
