@@ -9,7 +9,7 @@
     "com.github.dynobo.ulauncher-list-keywords": {
         "id": "com.github.dynobo.ulauncher-list-keywords",
         "url": "https://github.com/dynobo/ulauncher-list-keywords.git",
-        "updated_at": "2022-12-23T17:36:53.445617",
+        "updated_at": "2023-01-19T15:56:18.782176",
         "last_commit": "1cbb4380576335c83373a940a27874b7f6a873ea",
         "last_commit_time": "2022-11-12T01:27:29"
     },
@@ -30,7 +30,7 @@
     "com.github.beajeanm.ulauncher-windows-switcher": {
         "id": "com.github.beajeanm.ulauncher-windows-switcher",
         "url": "https://github.com/beajeanm/ulauncher-windows-switcher",
-        "updated_at": "2022-12-23T18:14:11.110657",
+        "updated_at": "2023-01-19T15:56:20.921944",
         "last_commit": "e746afcd1ae971294f983dadb6ad2c90a730ec39",
         "last_commit_time": "2022-08-04T22:59:46"
     },
@@ -44,7 +44,7 @@
     "com.github.ulauncher.ulauncher-kill": {
         "id": "com.github.ulauncher.ulauncher-kill",
         "url": "https://github.com/Ulauncher/ulauncher-kill",
-        "updated_at": "2023-01-19T15:40:50.017469",
+        "updated_at": "2023-01-19T15:56:22.973808",
         "last_commit": "00ffe8266dbb6c2aea7d86a6363e51cec4b1981f",
         "last_commit_time": "2022-11-26T16:15:05"
     },
