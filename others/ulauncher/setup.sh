@@ -10,8 +10,8 @@ install_apt_package ulauncher ${sudo_passwd} "ppa:agornostal/ulauncher"
 
 function install_plugin() {
     local reppo_url="$1"
-    parsed_path=$(${abs_dir}/parser ${reppo_url}
-    git_clone ${reppo_url} ${abs_dir}/${parsed_path})
+    parsed_path=$(${abs_dir}/parser ${reppo_url})
+    git_clone ${reppo_url} ${abs_dir}/${parsed_path}
 }
 
 install_plugin "https://github.com/fernaper/ulauncher-vscode.git"
