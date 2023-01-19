@@ -18,8 +18,8 @@ ${root_dir}/.tmux/setup.sh ${sudo_passwd}
 # setup neovim
 ${root_dir}/nvim/setup.sh ${sudo_passwd}
 
-# setup funny utils
-${root_dir}/funny/setup.sh ${sudo_passwd}
+# setup other utils
+${root_dir}/others/fuck/setup.sh ${sudo_passwd}
 
 echo ""
 echo "=================="
