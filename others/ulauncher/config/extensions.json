@@ -1,0 +1,72 @@
+{
+    "com.github.fernaper.ulauncher-vscode": {
+        "id": "com.github.fernaper.ulauncher-vscode",
+        "url": "https://github.com/fernaper/ulauncher-vscode.git",
+        "updated_at": "2022-12-23T17:35:49.708899",
+        "last_commit": "7cfa181dd34dfef49b9587998d4b10c529bf5eb9",
+        "last_commit_time": "2022-08-20T17:52:13"
+    },
+    "com.github.dynobo.ulauncher-list-keywords": {
+        "id": "com.github.dynobo.ulauncher-list-keywords",
+        "url": "https://github.com/dynobo/ulauncher-list-keywords.git",
+        "updated_at": "2022-12-23T17:36:53.445617",
+        "last_commit": "1cbb4380576335c83373a940a27874b7f6a873ea",
+        "last_commit_time": "2022-11-12T01:27:29"
+    },
+    "com.github.ulauncher.ulauncher-timer": {
+        "id": "com.github.ulauncher.ulauncher-timer",
+        "url": "https://github.com/ulauncher/ulauncher-timer",
+        "updated_at": "2022-12-23T18:13:42.361544",
+        "last_commit": "4262fc24db08610d01ea311d2e12f22588c98886",
+        "last_commit_time": "2020-11-03T07:21:30"
+    },
+    "com.github.fisadev.ulauncher-better-file-browser": {
+        "id": "com.github.fisadev.ulauncher-better-file-browser",
+        "url": "https://github.com/fisadev/ulauncher-better-file-browser",
+        "updated_at": "2022-12-23T18:13:59.317547",
+        "last_commit": "8ec8a0dda09e172de62051cd1f251816ce4af368",
+        "last_commit_time": "2019-09-06T19:20:09"
+    },
+    "com.github.beajeanm.ulauncher-windows-switcher": {
+        "id": "com.github.beajeanm.ulauncher-windows-switcher",
+        "url": "https://github.com/beajeanm/ulauncher-windows-switcher",
+        "updated_at": "2022-12-23T18:14:11.110657",
+        "last_commit": "e746afcd1ae971294f983dadb6ad2c90a730ec39",
+        "last_commit_time": "2022-08-04T22:59:46"
+    },
+    "com.github.manahter.ulauncher-translate": {
+        "id": "com.github.manahter.ulauncher-translate",
+        "url": "https://github.com/manahter/ulauncher-translate",
+        "updated_at": "2022-12-23T18:28:53.454954",
+        "last_commit": "f81d32c583c7e3542bdba655e991a56e6d9a2c28",
+        "last_commit_time": "2021-04-09T18:12:40"
+    },
+    "com.github.ulauncher.ulauncher-kill": {
+        "id": "com.github.ulauncher.ulauncher-kill",
+        "url": "https://github.com/Ulauncher/ulauncher-kill",
+        "updated_at": "2023-01-19T15:40:50.017469",
+        "last_commit": "00ffe8266dbb6c2aea7d86a6363e51cec4b1981f",
+        "last_commit_time": "2022-11-26T16:15:05"
+    },
+    "com.github.noam09.ulauncher-remmina": {
+        "id": "com.github.noam09.ulauncher-remmina",
+        "url": "https://github.com/noam09/ulauncher-remmina",
+        "updated_at": "2022-12-23T18:39:07.434425",
+        "last_commit": "fd0745d43e79e945c1f531c4654131a8c0fe72d7",
+        "last_commit_time": "2021-03-14T09:46:56"
+    },
+    "com.github.friday.ulauncher-clipboard": {
+        "id": "com.github.friday.ulauncher-clipboard",
+        "url": "https://github.com/friday/ulauncher-clipboard",
+        "updated_at": "2023-01-19T15:20:35.262511",
+        "last_commit": "73420cf4816f925321db15379c9c981c8f28c6fe",
+        "last_commit_time": "2022-08-03T20:22:13"
+    },
+    "com.github.brpaz.ulauncher-devdocs": {
+        "id": "com.github.brpaz.ulauncher-devdocs",
+        "url": "https://github.com/brpaz/ulauncher-devdocs",
+        "updated_at": "2022-12-26T09:17:40.152568",
+        "last_commit": "491bb5a5ccef082c5f6623db5f5676a8ab481144",
+        "last_commit_time": "2022-04-03T10:50:15"
+    }
+}

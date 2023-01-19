@@ -35,6 +35,7 @@ function git_clone() {
 function install_apt_package() {
     local pkg_name="$1"
     local sudo_passwd="$2"
+    local ppa="$3"
 
     if [ ! "${sudo_passwd}" ]; then
         echo "Please provide sudo password to install ${pkg_name}" > /dev/tty
@@ -43,6 +44,10 @@ function install_apt_package() {
 
     # checking package is installed by apt-cache
     if [ "$(apt-cache policy ${pkg_name} | grep Installed | grep none)" ]; then
+        if [ "${ppa}" ]; then
+            echo ${sudo_passwd} | sudo -S add-apt-repository -y ${ppa}
+        fi
+
         echo_ansi "Installing ${pkg_name}" "${ANSI_BOLD}${ANSI_SLOW_BLINK}"
         echo "" > /dev/tty
 
