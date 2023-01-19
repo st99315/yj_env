@@ -13,7 +13,7 @@ echo ""
 ${root_dir}/terminal/setup.sh ${sudo_passwd}
 
 # setup tmux
-${root_dir}/.tmux/setup.sh ${sudo_passwd}
+${root_dir}/tmux/setup.sh ${sudo_passwd}
 
 # setup neovim
 ${root_dir}/nvim/setup.sh ${sudo_passwd}
