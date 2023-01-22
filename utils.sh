@@ -83,6 +83,30 @@ function install_deb_package() {
     fi
 }
 
+function install_snap_package() {
+    local pkg_name="$1"
+    local sudo_passwd="$2"
+    local note="$3"
+
+    if [ ! "${sudo_passwd}" ]; then
+        echo "Please provide sudo password to install ${pkg_name}" > /dev/tty
+        sudo_passwd=$(get_password)
+    fi
+
+    if [ ! "$(which snap)" ]; then
+        install_apt_package snapd ${sudo_passwd}
+    fi
+
+    # checking package is installed by apt-cache
+    if [ ! "$(snap list | grep ${pkg_name})" ]; then
+        echo_ansi "Installing ${pkg_name}" "${ANSI_BOLD}${ANSI_SLOW_BLINK}"
+        echo "" > /dev/tty
+
+        echo ${sudo_passwd} | sudo -S snap install ${pkg_name} --${note}
+        echo "" > /dev/tty
+    fi
+}
+
 function install_font() {
     local font_path="$HOME/.local/share/fonts"
     local font_zip_url="$1"
