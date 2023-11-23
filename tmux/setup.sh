@@ -7,6 +7,9 @@ sudo_passwd="$1"
 # import git_clone and install_apt_package
 source ${abs_dir}/../utils.sh
 
+# install tmux
+install_apt_package tmux ${sudo_passwd}
+
 # link .conf to home
 rm -f ~/.tmux
 ln -sf ${abs_dir} ~/.tmux
