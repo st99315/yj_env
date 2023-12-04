@@ -6,7 +6,16 @@ sudo_passwd="$1"
 # import install_deb_package
 source ${abs_dir}/../utils.sh
 
-install_snap_package nvim ${sudo_passwd} classic
+NVIM_PATH=${abs_dir}/nvim.appimage
+
+curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ${NVIM_PATH}
+chmod u+x ${NVIM_PATH}
+
+set -u
+echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/vi vi "${NVIM_PATH}" 110
+echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/view view "${NVIM_PATH}" 110
+echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/vim vim "${NVIM_PATH}" 110
+echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/vimdiff vimdiff "${NVIM_PATH}" 110
 
 echo ""
 echo "===================="
