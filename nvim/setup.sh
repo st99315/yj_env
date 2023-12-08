@@ -17,6 +17,8 @@ echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/view view "
 echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/vim vim "${NVIM_PATH}" 110
 echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/vimdiff vimdiff "${NVIM_PATH}" 110
 
+ln -sf ${abs_dir}/config/nvim ~/.config/nvim
+
 echo ""
 echo "===================="
 echo " Neovim setup done! "
