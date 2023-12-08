@@ -19,6 +19,12 @@ echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/vimdiff vim
 
 ln -sf ${abs_dir}/config/nvim ~/.config/nvim
 
+# install python venv
+install_apt_package python3-venv ${sudo_passwd}
+
+# install rust and cargo
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+
 echo ""
 echo "===================="
 echo " Neovim setup done! "
