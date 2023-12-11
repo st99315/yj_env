@@ -22,11 +22,14 @@ ln -sf ${abs_dir}/config/nvim ~/.config/nvim
 # install python venv
 install_apt_package python3-venv ${sudo_passwd}
 
+# install pynvim
+pip3 install --user pynvim
+
 # install rust and cargo
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # install rg (ripgrep)
-install_apt_package python3-venv ${sudo_passwd}
+install_apt_package ripgrep ${sudo_passwd}
 
 # install lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
