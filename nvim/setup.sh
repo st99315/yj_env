@@ -25,6 +25,18 @@ install_apt_package python3-venv ${sudo_passwd}
 # install rust and cargo
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 
+# install rg (ripgrep)
+install_apt_package python3-venv ${sudo_passwd}
+
+# install lazygit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+echo ${sudo_passwd} | sudo -S install lazygit /usr/local/bin
+rm -f lazygit.tar.gz lazygit
+
+# install fzf
+
 echo ""
 echo "===================="
 echo " Neovim setup done! "
