@@ -1,0 +1,37 @@
+# https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+---
+BasedOnStyle: GNU
+Language: Cpp
+IndentWidth: 4
+AccessModifierOffset: -4
+PointerAlignment: Left
+
+NamespaceIndentation: None
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: false
+  AfterClass: true
+  AfterControlStatement: MultiLine
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeCatch: true
+  BeforeElse: true
+  BeforeLambdaBody: false
+  BeforeWhile: true
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+
+SpaceBeforeParens: Custom
+SpaceBeforeParensOptions:
+  AfterControlStatements: true
+  AfterForeachMacros: false
+  AfterFunctionDeclarationName: true
+  AfterFunctionDefinitionName: true
+  AfterOverloadedOperator: true
