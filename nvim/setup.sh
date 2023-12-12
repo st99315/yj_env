@@ -11,13 +11,14 @@ NVIM_PATH=${abs_dir}/nvim.appimage
 curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ${NVIM_PATH}
 chmod u+x ${NVIM_PATH}
 
-set -u
 echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/vi vi "${NVIM_PATH}" 110
 echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/view view "${NVIM_PATH}" 110
 echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/vim vim "${NVIM_PATH}" 110
 echo ${sudo_passwd} | sudo -S update-alternatives --install /usr/bin/vimdiff vimdiff "${NVIM_PATH}" 110
 
-ln -sf ${abs_dir}/config/nvim ~/.config/nvim
+# Link config directory to nvim path
+# -n: avoid create the symbol link in directory
+ln -sfn ${abs_dir}/config/nvim/ ~/.config/nvim
 
 # install python venv
 install_apt_package python3-venv ${sudo_passwd}
