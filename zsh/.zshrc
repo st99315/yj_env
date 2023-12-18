@@ -45,6 +45,10 @@ bindkey '^[[B' history-substring-search-down
 bindkey ',' autosuggest-accept
 
 # for tmux
-export TERM=screen-256color
+if [[ $TMUX != "" ]] then
+    export TERM="screen-256color"
+else
+    export TERM="xterm-256color"
+fi
 
 alias leetcode="vim leetcode.nvim"
