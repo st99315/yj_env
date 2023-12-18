@@ -18,6 +18,9 @@ ${root_dir}/tmux/setup.sh ${sudo_passwd}
 # setup neovim
 ${root_dir}/nvim/setup.sh ${sudo_passwd}
 
+#setup zsh
+${root_dir}/zsh/setup.sh ${sudo_passwd}
+
 # setup other utils
 ${root_dir}/others/fuck/setup.sh ${sudo_passwd}
 ${root_dir}/others/ulauncher/setup.sh ${sudo_passwd}
