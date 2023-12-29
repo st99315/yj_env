@@ -17,6 +17,9 @@ sudo usermod -s /bin/zsh $USER
 
 # link .conf to home
 ln -sf ${abs_dir}/.zshrc ~/.zshrc
+ln -sf ${abs_dir}/.zalias ~/.zalias
+ln -sf ${abs_dir}/.zbind ~/.zbind
+ln -sf ${abs_dir}/.zenv ~/.zenv
 
 echo ""
 echo_ansi ">>> Please logout and login to apply shell" "${ANSI_BOLD}${ANSI_SLOW_BLINK}${ANSI_FG_YELLOW}"

@@ -18,37 +18,46 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
 # modules
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-history-substring-search
 zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light greymd/docker-zsh-completion
 
 # tip the alias command is there
-zinit load djui/alias-tips
+zinit light djui/alias-tips
+
+# Oh My Zsh feature
+zinit snippet OMZL::history.zsh
+zinit snippet OMZL::completion.zsh
+zinit snippet OMZL::key-bindings.zsh
+zinit snippet OMZL::theme-and-appearance.zsh
+
+# Oh My Zsh plugins
+zinit snippet OMZP::sudo/sudo.plugin.zsh
+zinit snippet OMZP::pip/pip.plugin.zsh
+zinit snippet OMZP::git-prompt/git-prompt.plugin.zsh
+
+# not checked
+zinit snippet OMZP::colored-man-pages
+
 
 # p10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+# Source customize configuration
+[[ ! -f ~/.zalias ]] || source ~/.zalias
+[[ ! -f ~/.zbind ]] || source ~/.zbind
+[[ ! -f ~/.zenv ]] || source ~/.zenv
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Oh My Zsh feature
-zinit snippet OMZ::lib/completion.zsh
-zinit snippet OMZ::lib/history.zsh
-zinit snippet OMZ::lib/key-bindings.zsh
-zinit snippet OMZ::lib/theme-and-appearance.zsh
-
-# key binding
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey ',' autosuggest-accept
-
-# for tmux
-if [[ $TMUX != "" ]] then
-    export TERM="screen-256color"
-else
-    export TERM="xterm-256color"
-fi
-
-alias leetcode="vim leetcode.nvim"

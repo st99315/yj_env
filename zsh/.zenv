@@ -1,0 +1,8 @@
+# Setup environments here
+
+# for tmux
+if [[ $TMUX != "" ]] then
+    export TERM="screen-256color"
+else
+    export TERM="xterm-256color"
+fi

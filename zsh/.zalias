@@ -1,0 +1,4 @@
+# Setup alias commands here
+
+alias ll="ls -al"
+alias leetcode="vim leetcode.nvim"
